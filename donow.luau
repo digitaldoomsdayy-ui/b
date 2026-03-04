@@ -45,11 +45,14 @@ checkcaves = function()
 	for i,v in workspace:GetChildren() do
 		if v.Name == "specificOresCave" and v.Anchored == false or v.Name == "whatsupguys" then
 			c = c + 1
-			v.Position = pick.Handle.Position
+			--v.Position = pick.Handle.Position
 			v.CanCollide = false
 			v.Anchored = true
 			v.Name = "whatsupguys"
 			v.Size = Vector3.one
+			firetouchinterest(v, pick.Handle, 0)
+task.wait()
+firetouchinterest(v, pick.Handle, 0)
 		end
 	end
 
