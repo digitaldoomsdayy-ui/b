@@ -88,3 +88,4 @@ queue_on_teleport([[loadstring(game:HttpGet("https://raw.githubusercontent.com/d
 	game:GetService("TeleportService"):Teleport(15434645479)
 	
 end
+finished = true
