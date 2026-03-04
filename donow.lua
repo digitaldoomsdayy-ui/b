@@ -36,12 +36,13 @@ for i,v in pick:GetChildren() do
 	end
 end
 repeat task.wait() until pick:GetPivot()
+local r = Random.new()
 checkcaves = function()
 	local c = 0
 	for i,v in workspace:GetChildren() do
 		if v.Name == "specificOresCave" and v.Anchored == false or v.Name == "whatsupguys" then
 			c = c + 1
-			v.CFrame = pick:GetPivot()+Vector3.new(5,0,0)
+			v.CFrame = pick:GetPivot()*r:NextNumber(1,2)
 			v.CanCollide = true
 			v.Anchored = true
 			v.Name = "whatsupguys"
