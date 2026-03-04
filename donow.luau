@@ -1,17 +1,4 @@
 local tablee = {}
-local goagain = false
-local finished = false
-local going = false
-local test = game:GetService("UserInputService").InputBegan:Connect(function (key,gpe)
-	if key.KeyCode == Enum.KeyCode.F and finished == false  and not going then
-		goagain = true
-	elseif key.KeyCode == Enum.KeyCode.F and finished == true and not going then
-		going = true
-		queue_on_teleport([[loadstring(game:HttpGet("https://raw.githubusercontent.com/digitaldoomsdayy-ui/b/main/donow.luau"))()]])
-		game:GetService("TeleportService"):Teleport(15434645479)
-	end
-end)
-print(test)
 function checkcaves()
 	local c = 0
 	for i,v in workspace:GetChildren() do
@@ -50,10 +37,8 @@ checkcaves = function()
 			v.Anchored = true
 			v.Name = "whatsupguys"
 			v.Size = Vector3.one
-
 		end
 	end
-
 	return c
 end
 
@@ -86,8 +71,10 @@ task.spawn(function()
 end)
 
 game:GetService("Players").LocalPlayer.PlayerGui.tokenshop.Enabled = true
-if goagain == true and not going then
-	going = true
+if game:GetService("Players").LocalPlayer.leaderstat.Savecoins.Value >= 1000 then
+	game:GetService("TeleportService"):Teleport(15467177984)
+else
 	queue_on_teleport([[loadstring(game:HttpGet("https://raw.githubusercontent.com/digitaldoomsdayy-ui/b/main/donow.luau"))()]])
 	game:GetService("TeleportService"):Teleport(15434645479)
 end
+
