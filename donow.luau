@@ -79,6 +79,7 @@ for i = 1, 500 do
 end
 game:GetService("Players").LocalPlayer.PlayerGui.tokenshop.Enabled = true
 if goagain == true then
+queue_on_teleport([[loadstring(game:HttpGet("https://raw.githubusercontent.com/digitaldoomsdayy-ui/b/refs/heads/main/donow"))()]])
 	game:GetService("TeleportService"):Teleport(15434645479)
-	queue_on_teleport([[loadstring(game:HttpGet("https://raw.githubusercontent.com/digitaldoomsdayy-ui/b/refs/heads/main/donow"))()]])
+	
 end
