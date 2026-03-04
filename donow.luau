@@ -20,7 +20,6 @@ fireclickdetector(workspace.freeee.cd)
 replicatesignal(game:GetService("Players").LocalPlayer.PlayerGui.shop2buttons.pickbuy.MouseButton1Click)
 local pick = game.Players.LocalPlayer.Backpack:WaitForChild("Pickaxe")
 pick.Parent = game.Players.LocalPlayer.Character
-
 for i,v in pick:GetChildren() do
 	if v:IsA("BasePart") or v:IsA("UnionOperation") or v:IsA("MeshPart") then
 		v.Massless = true
