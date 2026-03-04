@@ -40,7 +40,7 @@ checkcaves = function()
 		if v.Name == "specificOresCave" and v.Anchored == false or v.Name == "whatsupguys" then
 			c = c + 1
 			v.CFrame = pick:GetPivot()
-			v.CanCollide = false
+			v.CanCollide = true
 			v.Anchored = true
 			v.Name = "whatsupguys"
 			v.Size = Vector3.one
