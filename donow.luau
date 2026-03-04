@@ -39,7 +39,7 @@ checkcaves = function()
 			v.CanCollide = false
 			v.Anchored = true
 			v.Name = "whatsupguys"
-			v.Size = Vector3.one*0.2
+			v.Size = Vector3.one
 		end
 	end
 	return c
