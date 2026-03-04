@@ -27,10 +27,12 @@ fireclickdetector(workspace.freeee.cd)
 replicatesignal(game:GetService("Players").LocalPlayer.PlayerGui.shop2buttons.pickbuy.MouseButton1Click)
 local pick = game.Players.LocalPlayer.Backpack:WaitForChild("Pickaxe")
 pick.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
 for i,v in pick:GetChildren() do
 	if v:IsA("BasePart") or v:IsA("UnionOperation") or v:IsA("MeshPart") then
 		v.Massless = true
 		v.Size = Vector3.new(5,5,5)
+		v.CanCollide = true
 	end
 end
 repeat task.wait() until pick:GetPivot()
