@@ -1,7 +1,7 @@
 local tablee = {}
 local goagain = false
 local finished = false
-game:GetService("UserInputService").InputBegan:Connect(function (key,gpe)
+local test = game:GetService("UserInputService").InputBegan:Connect(function (key,gpe)
 	if not gpe then return end
 	if key.KeyCode == Enum.KeyCode.F and finished == false then
 warn("goagain")
@@ -13,7 +13,7 @@ warn("did")
 		game:GetService("TeleportService"):Teleport(15434645479)
 	end
 end)
-game:GetService("UserInputService").InputBegan:Connect(function (key,gpe)
+local test2 = game:GetService("UserInputService").InputBegan:Connect(function (key,gpe)
 	if gpe then return end
 	if key.KeyCode == Enum.KeyCode.F and finished == false then
 warn("goagain")
@@ -25,6 +25,7 @@ warn("did")
 		game:GetService("TeleportService"):Teleport(15434645479)
 	end
 end)
+print(test,test2)
 function checkcaves()
 	local c = 0
 	for i,v in workspace:GetChildren() do
