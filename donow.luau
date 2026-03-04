@@ -9,6 +9,10 @@ function checkcaves()
 	end
 	return c
 end
+function rj()
+	queue_on_teleport([[loadstring(game:HttpGet("https://raw.githubusercontent.com/digitaldoomsdayy-ui/b/main/donow.luau"))()]])
+	game:GetService("TeleportService"):Teleport(15434645479)
+end
 repeat task.wait() until checkcaves() >= 1
 local x10 = game:GetService("Players").LocalPlayer.PlayerGui.tokenshop.convertx10.MouseButton1Click
 local x1 = game:GetService("Players").LocalPlayer.PlayerGui.tokenshop.convert.MouseButton1Click
@@ -35,7 +39,7 @@ checkcaves = function()
 			v.CanCollide = false
 			v.Anchored = true
 			v.Name = "whatsupguys"
-			v.Size = Vector3.one
+			v.Size = Vector3.one*0.2
 		end
 	end
 	return c
@@ -70,10 +74,9 @@ task.spawn(function()
 end)
 
 game:GetService("Players").LocalPlayer.PlayerGui.tokenshop.Enabled = true
-if game:GetService("Players").LocalPlayer.leaderstat.Savecoins.Value >= 1000 then
+if game:GetService("Players").LocalPlayer.leaderstat.Savecoins.Value >= 1702 then
 	game:GetService("TeleportService"):Teleport(15467177984)
 else
-	queue_on_teleport([[loadstring(game:HttpGet("https://raw.githubusercontent.com/digitaldoomsdayy-ui/b/main/donow.luau"))()]])
-	game:GetService("TeleportService"):Teleport(15434645479)
+	rj()
 end
 
