@@ -50,9 +50,11 @@ checkcaves = function()
 			v.Anchored = true
 			v.Name = "whatsupguys"
 			v.Size = Vector3.one
+pcall(function()
 			firetouchinterest(v, pick.Handle, 0)
 task.wait()
 firetouchinterest(v, pick.Handle, 0)
+end)
 		end
 	end
 
