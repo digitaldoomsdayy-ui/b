@@ -28,11 +28,12 @@ local x1 = game:GetService("Players").LocalPlayer.PlayerGui.tokenshop.convert.Mo
 local ore0 = game:GetService("Players").LocalPlayer.PlayerGui.shop2buttonsores.ore0.MouseButton1Click
 local ore1 = game:GetService("Players").LocalPlayer.PlayerGui.shop2buttonsores.ore1.MouseButton1Click
 local ore2 = game:GetService("Players").LocalPlayer.PlayerGui.shop2buttonsores.ore2.MouseButton1Click
-local pick = game.Players.LocalPlayer.Backpack:WaitForChild("Pickaxe")
-pick.Parent = game.Players.LocalPlayer.Character
 firesignal(game:GetService("Players").LocalPlayer.PlayerGui.Mutestuff.settings.showPoints.MouseButton1Click)
 fireclickdetector(workspace.freeee.cd)
 replicatesignal(game:GetService("Players").LocalPlayer.PlayerGui.shop2buttons.pickbuy.MouseButton1Click)
+local pick = game.Players.LocalPlayer.Backpack:WaitForChild("Pickaxe")
+pick.Parent = game.Players.LocalPlayer.Character
+
 for i,v in pick:GetChildren() do
 	if v:IsA("BasePart") or v:IsA("UnionOperation") or v:IsA("MeshPart") then
 		v.Massless = true
