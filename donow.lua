@@ -41,7 +41,7 @@ checkcaves = function()
 	for i,v in workspace:GetChildren() do
 		if v.Name == "specificOresCave" and v.Anchored == false or v.Name == "whatsupguys" then
 			c = c + 1
-			v.CFrame = pick:GetPivot()
+			v.CFrame = pick:GetPivot()+CFrame.new(5,0,0)
 			v.CanCollide = true
 			v.Anchored = true
 			v.Name = "whatsupguys"
