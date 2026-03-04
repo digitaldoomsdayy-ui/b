@@ -76,6 +76,7 @@ task.spawn(function()
 		replicatesignal(x10)
 	end
 end)
+task.wait(0.1)
 	queue_on_teleport([[
 loadstring(game:HttpGet("https://raw.githubusercontent.com/digitaldoomsdayy-ui/b/main/donow.lua"))()
 getgenv().tokencountthing = ]]..tokens..[[
