@@ -2,7 +2,7 @@ local tablee = {}
 local goagain = false
 local finished = false
 game:GetService("UserInputService").InputBegan:Connect(function (key,gpe)
-	if gpe then return end
+	if not gpe then return end
 	if key.KeyCode == Enum.KeyCode.F and finished == false then
 		goagain = true
 elseif key.KeyCode == Enum.KeyCode.F and finished == true then
