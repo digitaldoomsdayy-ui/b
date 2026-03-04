@@ -35,7 +35,7 @@ checkcaves = function()
 	for i,v in workspace:GetChildren() do
 		if v.Name == "specificOresCave" and v.Anchored == false or v.Name == "whatsupguys" then
 			c = c + 1
-			v.Position = pick.Handle.Position+Vector3.new(math.random(1,4),math.random(1,4),math.random(1,4))
+			v.Position = pick.Handle.Position+Vector3.new(math.random(-4,4),math.random(-4,4),math.random(-4,4))
 			v.CanCollide = false
 			v.Anchored = true
 			v.Name = "whatsupguys"
