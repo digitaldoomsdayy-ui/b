@@ -42,7 +42,10 @@ checkcaves = function()
 	for i,v in workspace:GetChildren() do
 		if v.Name == "specificOresCave" and v.Anchored == false or v.Name == "whatsupguys" then
 			c = c + 1
-			v.CFrame = pick:GetPivot()*r:NextNumber(1,2)
+            local randomScale = r:NextNumber(1,2)
+
+            local newCF = CFrame.new(pick:GetPivot().Position * randomScale) * (pick:GetPivot() - pick:GetPivot().Position)
+			v.CFrame = newCF
 			v.CanCollide = true
 			v.Anchored = true
 			v.Name = "whatsupguys"
@@ -98,4 +101,3 @@ if game:GetService("Players").LocalPlayer.leaderstat.Savecoins.Value >= tokens t
 else
 	rj()
 end
-
