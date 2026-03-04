@@ -31,7 +31,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
 for i,v in pick:GetChildren() do
 	if v:IsA("BasePart") or v:IsA("UnionOperation") or v:IsA("MeshPart") then
 		v.Massless = true
-		v.Size = Vector3.new(5,5,5)
+		v.Size = Vector3.new(1,5,5)
 		v.CanCollide = true
 	end
 end
