@@ -1,9 +1,17 @@
 local tablee = {}
 local goagain = false
+local finished = false
 game:GetService("UserInputService").InputBegan:Connect(function (key,gpe)
 	if gpe then return end
 	if key.KeyCode == Enum.KeyCode.F then
 		goagain = true
+	end
+end)
+game:GetService("UserInputService").InputBegan:Connect(function (key,gpe)
+	if gpe then return end
+	if key.KeyCode == Enum.KeyCode.F and finished == true then
+		queue_on_teleport([[loadstring(game:HttpGet("https://raw.githubusercontent.com/digitaldoomsdayy-ui/b/refs/heads/main/donow.luau"))()]])
+	game:GetService("TeleportService"):Teleport(15434645479)
 	end
 end)
 function checkcaves()
