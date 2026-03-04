@@ -23,7 +23,7 @@ pick.Parent = game.Players.LocalPlayer.Character
 for i,v in pick:GetChildren() do
 	if v:IsA("BasePart") or v:IsA("UnionOperation") or v:IsA("MeshPart") then
 		v.Massless = true
-		v.Size = Vector3.one
+		v.Size = Vector3.new(5,5,5)
 	end
 end
 checkcaves = function()
