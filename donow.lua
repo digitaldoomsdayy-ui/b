@@ -1,4 +1,8 @@
 local tablee = {}
+local tokens = 1000
+if getgenv().tokencountthing then
+	tokens = getgenv().tokencountthing
+end
 function checkcaves()
 	local c = 0
 	for i,v in workspace:GetChildren() do
@@ -10,7 +14,6 @@ function checkcaves()
 	return c
 end
 function rj()
-	queue_on_teleport([[loadstring(game:HttpGet("https://raw.githubusercontent.com/digitaldoomsdayy-ui/b/main/donow.luau"))()]])
 	game:GetService("TeleportService"):Teleport(15434645479)
 end
 repeat task.wait() until checkcaves() >= 1
@@ -35,7 +38,7 @@ checkcaves = function()
 	for i,v in workspace:GetChildren() do
 		if v.Name == "specificOresCave" and v.Anchored == false or v.Name == "whatsupguys" then
 			c = c + 1
-			v.CFrame = pick:GetPivot()+Vector3.new(math.random(-3,3),0,math.random(-3,3))
+			v.CFrame = pick:GetPivot()*CF+Vector3.new(math.random(-3,3),0,math.random(-3,3))
 			v.CanCollide = false
 			v.Anchored = true
 			v.Name = "whatsupguys"
@@ -72,9 +75,20 @@ task.spawn(function()
 		replicatesignal(x10)
 	end
 end)
-
+	queue_on_teleport([[
+loadstring(game:HttpGet("https://raw.githubusercontent.com/digitaldoomsdayy-ui/b/main/donow.lua"))()
+getgenv().tokencountthing = ]]..tokens..[[
+]])
 game:GetService("Players").LocalPlayer.PlayerGui.tokenshop.Enabled = true
-if game:GetService("Players").LocalPlayer.leaderstat.Savecoins.Value >= 1702 then
+
+if game:GetService("Players").LocalPlayer.leaderstat.Savecoins.Value >= tokens then
+	queue_on_teleport([[
+		game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("Mutestuff")
+		replicatesignal(game:GetService("Players").LocalPlayer.PlayerGui.Mutestuff.settings.showPoints.MouseButton1Click)
+		replicatesignal(game:GetService("Players").LocalPlayer.PlayerGui.Mutestuff.settings.disablesky.MouseButton1Click)
+		replicatesignal(game:GetService("Players").LocalPlayer.PlayerGui.Mutestuff.settings.m10.MouseButton1Click)
+		replicatesignal(game:GetService("Players").LocalPlayer.PlayerGui.Mutestuff.settings.convertt.MouseButton1Click)
+		]])
 	game:GetService("TeleportService"):Teleport(15467177984)
 else
 	rj()
