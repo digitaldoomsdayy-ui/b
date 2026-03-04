@@ -69,7 +69,7 @@ function sellores()
 end
 repeat task.wait() sellores() until checkitems() == 0
 task.spawn(function()
-	for i = 1, 25 do
+	for i = 1, 33 do
 		replicatesignal(x1)
 	end
 end)
@@ -78,7 +78,7 @@ task.spawn(function()
 		replicatesignal(x10)
 	end
 end)
-task.wait(0.1)
+
 	queue_on_teleport([[
 loadstring(game:HttpGet("https://raw.githubusercontent.com/digitaldoomsdayy-ui/b/main/donow.lua"))()
 getgenv().tokencountthing = ]]..tokens..[[
