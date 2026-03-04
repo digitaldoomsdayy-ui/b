@@ -1,53 +1,42 @@
 local tablee = {}
 local goagain = false
 local finished = false
+local going = false
 local test = game:GetService("UserInputService").InputBegan:Connect(function (key,gpe)
-	if not gpe then return end
-	if key.KeyCode == Enum.KeyCode.F and finished == false then
-warn("goagain")
+	if key.KeyCode == Enum.KeyCode.F and finished == false  and not going then
 		goagain = true
-	elseif key.KeyCode == Enum.KeyCode.F and finished == true then
-warn("did")
+	elseif key.KeyCode == Enum.KeyCode.F and finished == true and not going then
+		going = true
 		queue_on_teleport([[loadstring(game:HttpGet("https://raw.githubusercontent.com/digitaldoomsdayy-ui/b/main/donow.luau"))()]])
-
 		game:GetService("TeleportService"):Teleport(15434645479)
 	end
 end)
-local test2 = game:GetService("UserInputService").InputBegan:Connect(function (key,gpe)
-	if gpe then return end
-	if key.KeyCode == Enum.KeyCode.F and finished == false then
-warn("goagain")
-		goagain = true
-	elseif key.KeyCode == Enum.KeyCode.F and finished == true then
-warn("did")
-		queue_on_teleport([[loadstring(game:HttpGet("https://raw.githubusercontent.com/digitaldoomsdayy-ui/b/main/donow.luau"))()]])
-
-		game:GetService("TeleportService"):Teleport(15434645479)
-	end
-end)
-print(test,test2)
+print(test)
 function checkcaves()
 	local c = 0
 	for i,v in workspace:GetChildren() do
 		if v.Name == "specificOresCave" and v.Anchored == false or v.Name == "whatsupguys" then
 			c = c + 1
 			table.insert(tablee,v)
-			v.Name = "whatsupguys"
 		end
 	end
-
 	return c
 end
 repeat task.wait() until checkcaves() >= 1
+local x10 = game:GetService("Players").LocalPlayer.PlayerGui.tokenshop.convertx10.MouseButton1Click
+local x1 = game:GetService("Players").LocalPlayer.PlayerGui.tokenshop.convert.MouseButton1Click
+local ore0 = game:GetService("Players").LocalPlayer.PlayerGui.shop2buttonsores.ore0.MouseButton1Click
+local ore1 = game:GetService("Players").LocalPlayer.PlayerGui.shop2buttonsores.ore1.MouseButton1Click
+local ore2 = game:GetService("Players").LocalPlayer.PlayerGui.shop2buttonsores.ore2.MouseButton1Click
+local pick = game.Players.LocalPlayer.Backpack:WaitForChild("Pickaxe")
+pick.Parent = game.Players.LocalPlayer.Character
 firesignal(game:GetService("Players").LocalPlayer.PlayerGui.Mutestuff.settings.showPoints.MouseButton1Click)
 fireclickdetector(workspace.freeee.cd)
 replicatesignal(game:GetService("Players").LocalPlayer.PlayerGui.shop2buttons.pickbuy.MouseButton1Click)
-local pick = game.Players.LocalPlayer.Backpack:WaitForChild("Pickaxe")
-pick.Parent = game.Players.LocalPlayer.Character
 for i,v in pick:GetChildren() do
 	if v:IsA("BasePart") or v:IsA("UnionOperation") or v:IsA("MeshPart") then
 		v.Massless = true
-		v.Size = Vector3.new(2048, 2048, 2048)
+		v.Size = Vector3.new(10,10,10)
 	end
 end
 checkcaves = function()
@@ -55,26 +44,17 @@ checkcaves = function()
 	for i,v in workspace:GetChildren() do
 		if v.Name == "specificOresCave" and v.Anchored == false or v.Name == "whatsupguys" then
 			c = c + 1
-			table.insert(tablee,v)
+			v.Position = pick.Handle.Position
+			v.CanCollide = false
+			v.Anchored = true
 			v.Name = "whatsupguys"
+			v.Size = Vector3.one
 		end
 	end
-	for i,v in tablee do
-		v.Position = pick.Handle.Position
-		v.CanCollide = false
-		v.Anchored = true
-		v.Name = "whatsupguys"
-	end
+
 	return c
 end
-function movestufftotable()
-	for i,v in workspace:GetChildren() do
-		if v.Name == "specificOresCave" and v.Anchored == false then
-			table.insert(tablee,v)
-			v.Name = "whatsupguys"
-		end
-	end
-end
+
 function checkitems()
 	local c = 0
 	for i,v in game.Players.LocalPlayer.Backpack:GetChildren() do
@@ -84,23 +64,28 @@ function checkitems()
 	end
 	return c
 end
-movestufftotable()
 repeat task.wait() pick:Activate() until checkcaves() == 0
 function sellores()
 	replicatesignal(game:GetService("Players").LocalPlayer.PlayerGui.shop2buttonsores.ore0.MouseButton1Click)
 	replicatesignal(game:GetService("Players").LocalPlayer.PlayerGui.shop2buttonsores.ore1.MouseButton1Click)
 	replicatesignal(game:GetService("Players").LocalPlayer.PlayerGui.shop2buttonsores.ore2.MouseButton1Click)
-	replicatesignal(game:GetService("Players").LocalPlayer.PlayerGui.shop2buttonsores.ore3.MouseButton1Click)
+	--replicatesignal(game:GetService("Players").LocalPlayer.PlayerGui.shop2buttonsores.ore3.MouseButton1Click)
 end
 repeat task.wait() sellores() until checkitems() == 0
-for i = 1, 500 do
-	replicatesignal(game:GetService("Players").LocalPlayer.PlayerGui.tokenshop.convert.MouseButton1Click)
-	replicatesignal(game:GetService("Players").LocalPlayer.PlayerGui.tokenshop.convertx10.MouseButton1Click)
-end
+task.spawn(function()
+	for i = 1, 25 do
+		replicatesignal(x1)
+	end
+end)
+task.spawn(function()
+	for i = 1, 8 do
+		replicatesignal(x10)
+	end
+end)
+
 game:GetService("Players").LocalPlayer.PlayerGui.tokenshop.Enabled = true
-if goagain == true then
-queue_on_teleport([[loadstring(game:HttpGet("https://raw.githubusercontent.com/digitaldoomsdayy-ui/b/main/donow.luau"))()]])
+if goagain == true and not going then
+	going = true
+	queue_on_teleport([[loadstring(game:HttpGet("https://raw.githubusercontent.com/digitaldoomsdayy-ui/b/main/donow.luau"))()]])
 	game:GetService("TeleportService"):Teleport(15434645479)
-	
 end
-finished = true
