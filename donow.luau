@@ -6,7 +6,7 @@ game:GetService("UserInputService").InputBegan:Connect(function (key,gpe)
 	if key.KeyCode == Enum.KeyCode.F and finished == false then
 		goagain = true
 	elseif key.KeyCode == Enum.KeyCode.F and finished == true then
-		queue_on_teleport([[loadstring(game:HttpGet("https://raw.githubusercontent.com/digitaldoomsdayy-ui/b/refs/heads/main/donow.luau"))()]])
+		queue_on_teleport([[loadstring(game:HttpGet("https://raw.githubusercontent.com/digitaldoomsdayy-ui/b/main/donow.luau"))()]])
 
 		game:GetService("TeleportService"):Teleport(15434645479)
 	end
@@ -16,7 +16,7 @@ game:GetService("UserInputService").InputBegan:Connect(function (key,gpe)
 	if key.KeyCode == Enum.KeyCode.F and finished == false then
 		goagain = true
 	elseif key.KeyCode == Enum.KeyCode.F and finished == true then
-		queue_on_teleport([[loadstring(game:HttpGet("https://raw.githubusercontent.com/digitaldoomsdayy-ui/b/refs/heads/main/donow.luau"))()]])
+		queue_on_teleport([[loadstring(game:HttpGet("https://raw.githubusercontent.com/digitaldoomsdayy-ui/b/main/donow.luau"))()]])
 
 		game:GetService("TeleportService"):Teleport(15434645479)
 	end
@@ -94,7 +94,7 @@ for i = 1, 500 do
 end
 game:GetService("Players").LocalPlayer.PlayerGui.tokenshop.Enabled = true
 if goagain == true then
-queue_on_teleport([[loadstring(game:HttpGet("https://raw.githubusercontent.com/digitaldoomsdayy-ui/b/refs/heads/main/donow.luau"))()]])
+queue_on_teleport([[loadstring(game:HttpGet("https://raw.githubusercontent.com/digitaldoomsdayy-ui/b/main/donow.luau"))()]])
 	game:GetService("TeleportService"):Teleport(15434645479)
 	
 end
