@@ -33,6 +33,7 @@ for i,v in pick:GetChildren() do
 		v.Size = Vector3.new(5,5,5)
 	end
 end
+repeat task.wait() until pick:GetPivot()
 checkcaves = function()
 	local c = 0
 	for i,v in workspace:GetChildren() do
